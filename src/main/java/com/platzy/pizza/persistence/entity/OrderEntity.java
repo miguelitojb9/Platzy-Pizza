@@ -18,7 +18,7 @@ import jakarta.persistence.GenerationType;
 
 
 @Entity
-@Table(name = "orders")
+@Table(name = "pizza_order")
 @Getter
 @Setter
 @NoArgsConstructor

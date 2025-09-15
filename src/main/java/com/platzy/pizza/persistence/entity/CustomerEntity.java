@@ -28,7 +28,7 @@ public class CustomerEntity {
     @Column(length = 50, unique = true)
     private String email;
 
-    @Column(name="phone_numbre", length = 10)
+    @Column(name="phone_number", length = 150)
     private String phone;
 
 }
