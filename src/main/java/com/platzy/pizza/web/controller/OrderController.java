@@ -28,4 +28,14 @@ public class OrderController {
         return orders;
     }
 
+    @GetMapping("/today")
+    public ResponseEntity<List<OrderEntity>> getTodayOrders(){
+        return ResponseEntity.ok(this.orderService.getTodayOrders());
+    }
+
+    @GetMapping("/outside")
+    public ResponseEntity<List<OrderEntity>> getOutSideOrders(){
+        return ResponseEntity.ok(this.orderService.getOutsideOrders());
+    }
+
 }

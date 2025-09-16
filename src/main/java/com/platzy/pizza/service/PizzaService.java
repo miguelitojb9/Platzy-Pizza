@@ -21,6 +21,19 @@ public class PizzaService {
         return this.pizzaRepository.findAll();
     }
 
+    public List<PizzaEntity> getAvailable(){
+        return this.pizzaRepository.findAllByAvailableTrueOrderByPrice();
+    }
+
+    public PizzaEntity getAvailableByName(String name){
+        return this.pizzaRepository.findFirstByAvailableTrueAndNameIgnoreCase(name)
+        .orElseThrow(() -> new RuntimeException("No pizza found with name: " + name));
+    }
+
+    public List<PizzaEntity> getCheapest(double price){
+        return this.pizzaRepository.findTop3ByAvailableTrueAndPriceLessThanEqualOrderByPriceAsc(price);
+    }
+
     public PizzaEntity get(int id){
         return this.pizzaRepository.findById(id).orElse(null);
     }
@@ -36,6 +49,8 @@ public class PizzaService {
     public void delete(int idPizza){
         this.pizzaRepository.deleteById(idPizza);
     }
+
+
 
     // public List<PizzaEntity> getAll(){
     //     return this.jdbcTemplate.query("SELECT * FROM pizzas WHERE available = 0 ", new BeanPropertyRowMapper<>(PizzaEntity.class));
