@@ -38,19 +38,16 @@ VALUES
 -- INSERT ORDERS
 INSERT INTO pizza_order (id_order, id_customer, date, total, method, additional_notes)
 VALUES
-(1, '192758012', NOW() - INTERVAL '5 DAY', 42.95, 'D', 'Don''t be late pls.'),
-(2, '474771564', NOW() - INTERVAL '4 DAY', 62.0, 'S', null),
-(3, '182120056', NOW() - INTERVAL '3 DAY', 22.0, 'C', null),
-(4, '617684636', NOW() - INTERVAL '2 DAY', 42.0, 'S', null),
-(5, '192758012', NOW() - INTERVAL '1 DAY', 20.5, 'D', 'Please bring the jalapeños separately.'),
+(1, '192758012', NOW(), 42.95, 'D', 'Don''t be late pls.'),
+(2, '474771564', NOW(), 62.0, 'S', null),
+(3, '182120056', NOW(), 22.0, 'C', null),
+(4, '617684636', NOW() , 42.0, 'S', null),
+(5, '192758012', NOW() , 20.5, 'D', 'Please bring the jalapeños separately.'),
 (6, '782668115', NOW(), 23, 'D', null);
-
 
 -- INSERT ORDER ITEMS
 INSERT INTO order_item (id_order, id_item, id_pizza, quantity, price)
 VALUES
-(1, 1, 1, 1, 23.0),
-(1, 2, 4, 1, 19.95),
 (2, 1, 2, 1, 18.5),
 (2, 2, 6, 1, 24.0),
 (2, 3, 7, 1, 19.5),
